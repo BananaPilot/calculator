@@ -1,0 +1,113 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.display{
+    height: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: end;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#display{
+    border-bottom: solid 1px gray;
+    font-size: 50px;
+}
+
+#previous{
+    font-size: 25px;
+    height: 35px;
+}
+
+.keys{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-areas: 
+    ". . . ."
+    "seven eight nine equal"
+    "four five six equal"
+    "one two three equal"
+    "decimal zero clear equal";
+}
+
+button{
+    margin: 5px;
+    font-size: 30px;
+    border: none;
+    box-shadow: 0 0 1px;
+    background-color: white;
+}
+
+button:hover{
+    background-color: rgba(128, 128, 128, 0.35);
+    cursor: pointer;
+}
+
+.operators{
+    background-color: rgba(128, 128, 128, 0.5);
+}
+
+.one{
+    grid-area: one;
+}
+
+.two{
+    grid-area: two;
+}
+
+.three{
+    grid-area: three;
+}
+
+.four{
+    grid-area: four;
+}
+
+.five{
+    grid-area: five;
+}
+
+.six{
+    grid-area: six;
+}
+
+.seven{
+    grid-area: seven;
+}
+
+.eight{
+    grid-area: eight;
+}
+
+.nine{
+    grid-area: nine;
+}
+
+.decimal{
+    grid-area: decimal;
+}
+
+.zero{
+    grid-area: zero;
+}
+
+.clear{
+    grid-area: clear;
+}
+
+.equal{
+    grid-area: equal;
+    background-color: #4267b2dd;
+    color: white;
+}
+
+.equal:hover{
+    background-color: #4267b2cf;
+}
