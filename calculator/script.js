@@ -7,6 +7,8 @@ let buttonNumber = document.querySelectorAll('[data-number]')
 let buttonClear = document.querySelectorAll('[data-clear]')
 let buttonEqual = document.querySelectorAll('[data-equal]')
 
+
+
 buttonClear.forEach(button =>{
     button.addEventListener('click', () =>{
         clear()
@@ -24,6 +26,9 @@ buttonEqual.forEach(button =>{
 
 buttonNumber.forEach(button =>{
     button.addEventListener('click', () =>{
+        if(display.innerText === '0'){
+            clearDisplay()
+        }
         const number = button.innerText
         appendNumber(number)
     })
@@ -35,6 +40,8 @@ buttonOperator.forEach(button =>{
         appendOperator(operator)
     })
 })
+
+// functions
 
 function appendNumber (number) {
     if (number === '.' && display.innerText.includes('.')) return
