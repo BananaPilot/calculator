@@ -73,7 +73,7 @@ function compute(){
             computation = a * b
             break
         case '÷':
-            computation = a + b
+            computation = a / b
             break
         default:
             return
