@@ -1,3 +1,3 @@
-# cosespace
+# Banana Pilota's repostry
 
-repostry created for codespace
+hi, this is my calculator i am new to programming and i really like it XD

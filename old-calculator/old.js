@@ -1,7 +1,7 @@
 let buttonNum = document.querySelectorAll('[data-number]')
 let buttonOperator = document.querySelectorAll('[data-operator]')
 let display = document.getElementById('display')
-let clear = document.querySelectorAll('[data-c]')
+let clear = document.querySelectorAll('[data-clear]')
 let equal = document.querySelectorAll('[data-equal]')
 let previous = document.getElementById('previous')
 
