@@ -35,6 +35,8 @@ buttonOperator.forEach(button =>{
     })
 })
 
+//  functions
+
 function clearAll(){
     display.innerText = ''
     previous.innerText = ''
