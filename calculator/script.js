@@ -29,6 +29,7 @@ buttonNumber.forEach(button =>{
 
 buttonOperator.forEach(button =>{
     button.addEventListener('click', () =>{
+        if (display.innerText === '.') return
         operator = button.innerText
         appendOperator(operator)
         clearDisplay()
