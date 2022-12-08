@@ -15,7 +15,7 @@ body{
 }
 
 #display{
-    border-bottom: solid 1px gray;
+    border-bottom: solid 1px rgb(128, 128, 128);
     font-size: 50px;
 }
 
@@ -41,7 +41,7 @@ button{
     font-size: 30px;
     border: none;
     box-shadow: 0 0 1px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     transition: transform 0.3s, background-color 0.3s; 
 }
 
@@ -105,10 +105,10 @@ button:hover{
 
 .equal{
     grid-area: equal;
-    background-color: #4267b2dd;
+    background-color: rgba(66, 103, 178, 0.867);
     color: white;
 }
 
 .equal:hover{
-    background-color: #4267b2cf;
+    background-color: rgba(66, 103, 178, 0.812);
 }
