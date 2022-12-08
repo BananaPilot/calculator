@@ -10,21 +10,21 @@ let buttonEqual = document.querySelectorAll('[data-equal]')
 
 buttonClear.forEach(button => {
     button.addEventListener('click', () =>{
-        display.setSelectionRange(display.value.length,display.value.length);
+        display.scrollLeft = display.scrollWidth
         clearAll()
     })
 })
 
 buttonEqual.forEach(button =>{
     button.addEventListener('click', () =>{
-        display.setSelectionRange(display.value.length,display.value.length);
+        display.scrollLeft = display.scrollWidth
         compute()
     })
 })
 
 buttonNumber.forEach(button =>{
     button.addEventListener('click', () =>{
-        display.setSelectionRange(display.value.length,display.value.length);
+        display.scrollLeft = display.scrollWidth
         number = button.innerText
         appendNumber(number)
     })
@@ -84,7 +84,7 @@ function compute(){
         default:
             return
     }
-    display.value = computation
+    display.value = computation.toPrecision(9)
     operator = undefined
     previous.innerText = ''
 }
