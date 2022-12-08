@@ -1,21 +1,80 @@
-body{
+:root {
+    --background: rgb(255, 255, 255);
+    --text-color: rgb(0, 0, 0);
+    --content-shadow-color: rgb(180, 180, 180);
+    --button-hover-color: rgb(200, 200, 200);
+
+    --calc-display-border: 1px solid rgb(128, 128, 128);
+
+    --number-background: rgb(255, 255, 255);
+
+    --operator-text-color: rgb(0, 0, 0);
+    --operator-text-color-hover: rgb(0, 0, 0);
+    --operator-background: rgb(180, 180, 180);
+
+    --equal-background: rgb(0, 70, 211);
+    --equal-background-hover: rgb(0, 89, 255);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: rgb(32, 33, 36);
+        --text-color: rgb(255, 255, 255);
+        --content-shadow-color: rgb(90, 90, 90);
+        --button-hover-color: rgb(105, 105, 105);
+    
+        --calc-display-border: 1px solid rgb(255, 255, 255);
+    
+        --number-background: rgb(32, 33, 36);
+    
+        --operator-text-color: rgb(0, 0, 0);
+        --operator-text-color-hover: rgb(255, 255, 255);
+        --operator-background: rgb(190, 190, 190);
+    
+        --equal-background: rgb(0, 70, 211);
+        --equal-background-hover: rgb(0, 89, 255);
+    }
+}
+
+body {
+    background-color: var(--background);
+    margin: 0;
+    overflow: hidden;
+    --padding: 10px;
+    padding: var(--padding);
+    width: calc(100vw - var(--padding) * 2);
+    height: calc(100vh - var(--padding) * 2);
+}
+
+body, body * {
+    color: var(--text-color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.box {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 430px;
+    margin: auto;
+    filter: drop-shadow(-3px 5px 1.5px var(--content-shadow-color))
 }
 
 .display{
-    height: 50px;
+    display: grid;
+    height: 1em;
     text-align: end;
-    padding-right: 15px;
-    padding-bottom: 5px;
-    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
     margin-bottom: 10px;
+    margin-right: 5px;
+    overflow: hidden;
+    background-color: transparent;
 }
 
 #display{
-    border-bottom: solid 1px rgb(128, 128, 128);
+    border-bottom: var(--calc-display-border);
     font-size: 50px;
 }
 
@@ -38,21 +97,29 @@ body{
 }
 
 button{
+    border-radius: 0;
+    padding: 0;
     font-size: 30px;
     border: none;
-    box-shadow: 0 0 1px;
-    background-color: rgb(255, 255, 255);
-    transition: transform 0.3s, background-color 0.3s; 
+    box-shadow: 0 0 var(--content-shadow-color);
+    background-color: var(--number-background);
+    transform: translate(-3px, 5px);
+    transition-duration: 0.3s;
+    transition-property: transform, background-color, box-shadow, border-radius, color;
 }
 
 button:hover{
-    background-color: rgba(128, 128, 128, 0.35);
+    color: var(--operator-text-color-hover);
+    border-radius: .15em;
+    background-color: var(--button-hover-color);
     cursor: pointer;
-    transform: translateY(-5px) translateX(3px);
+    transform: translate(0);
+    box-shadow: -3px 4px var(--content-shadow-color);
 }
 
 .operators{
-    background-color: rgba(128, 128, 128, 0.5);
+    color: var(--operator-text-color);
+    background-color: var(--operator-background);
 }
 
 .one{
@@ -105,10 +172,37 @@ button:hover{
 
 .equal{
     grid-area: equal;
-    background-color: rgba(66, 103, 178, 0.9);
+    background-color: var(--equal-background);
     color: white;
 }
 
 .equal:hover{
-    background-color: rgba(66, 103, 178, 0.8);
+    background-color: var(--equal-background-hover);
+    color: white;
+}
+
+/* Disable input number arrows */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Remove styles from textareas */
+input {
+    border: none;
+    overflow: auto;
+    outline: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    resize: none; /*remove the resize handle on the bottom right*/
 }

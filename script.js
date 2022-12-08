@@ -10,18 +10,21 @@ let buttonEqual = document.querySelectorAll('[data-equal]')
 
 buttonClear.forEach(button => {
     button.addEventListener('click', () =>{
+        display.setSelectionRange(display.value.length,display.value.length);
         clearAll()
     })
 })
 
 buttonEqual.forEach(button =>{
     button.addEventListener('click', () =>{
+        display.setSelectionRange(display.value.length,display.value.length);
         compute()
     })
 })
 
 buttonNumber.forEach(button =>{
     button.addEventListener('click', () =>{
+        display.setSelectionRange(display.value.length,display.value.length);
         number = button.innerText
         appendNumber(number)
     })
@@ -29,7 +32,7 @@ buttonNumber.forEach(button =>{
 
 buttonOperator.forEach(button =>{
     button.addEventListener('click', () =>{
-        if (display.innerText === '.') return
+        if (display.value === '.') return
         operator = button.innerText
         appendOperator(operator)
         clearDisplay()
@@ -39,31 +42,31 @@ buttonOperator.forEach(button =>{
 //  functions
 
 function clearAll(){
-    display.innerText = ''
+    display.value = ''
     previous.innerText = ''
 }
 
 function clearDisplay(){
-    display.innerText = ''
+    display.value = ''
 }
 
 function appendNumber(number){
-    if (number === '.' && display.innerText.includes('.')) return
-    display.innerText = display.innerText + number
+    if (number === '.' && display.value.includes('.')) return
+    display.value = display.value + number
 }
 
 function appendOperator(operator){
-    if (display.innerText == '') return
+    if (display.value == '') return
     if (previous.innerText !== ''){
         compute()
     }
-    previous.innerText = display.innerText
+    previous.innerText = display.value
 }
 
 function compute(){
     let computation
     const a = parseFloat(previous.innerText)
-    const b = parseFloat(display.innerText)
+    const b = parseFloat(display.value)
     if (isNaN(a) || isNaN(b)) return
     switch (operator){
         case '+':
@@ -81,7 +84,7 @@ function compute(){
         default:
             return
     }
-    display.innerText = computation
+    display.value = computation
     operator = undefined
     previous.innerText = ''
 }
