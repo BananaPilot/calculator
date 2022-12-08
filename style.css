@@ -105,10 +105,10 @@ button:hover{
 
 .equal{
     grid-area: equal;
-    background-color: rgba(66, 103, 178, 0.867);
+    background-color: rgba(66, 103, 178, 0.9);
     color: white;
 }
 
 .equal:hover{
-    background-color: rgba(66, 103, 178, 0.812);
+    background-color: rgba(66, 103, 178, 0.8);
 }
