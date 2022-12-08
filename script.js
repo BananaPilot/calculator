@@ -84,7 +84,12 @@ function compute(){
         default:
             return
     }
-    display.value = computation.toPrecision(9)
+    if(computation.toString().length >= 13){
+    display.value = computation.toPrecision(13)
+    }
+    else{
+        display.value = computation
+    }
     operator = undefined
     previous.innerText = ''
 }
