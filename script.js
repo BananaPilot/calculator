@@ -84,8 +84,8 @@ function compute(){
         default:
             return
     }
-    if(computation.toString().length >= 20){
-    display.value = computation.toPrecision(20)
+    if(computation.toString().length >= 15){
+    display.value = computation.toPrecision(15)
     }
     else{
         display.value = computation
